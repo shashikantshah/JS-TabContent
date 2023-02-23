@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://www.progold.com/PG_Resources/PG_CSS/PG_Fonts_Lato.css?v=0040">
+    <title>Document</title>
+    <style>
+        body{font-family:PG_Fonts_GorditaRegular,PG_Fonts_LatoRegular,Arial,Verdana,Helvetica,sans-serif !important;background-color:white;font-size:14px;margin:0px;padding:0px;overflow-y:auto;}
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        /* font-family: Arial, Helvetica, sans-serif; */
+        list-style: none;
+      }
+
+      section {
+        min-height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      section .tabs {
+        font-size: 15px;
+        padding: 0;
+        background-color: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 50px;
+        position: relative;
+      }
+      section .tabs ul {
+        display: flex;
+      }
+      section .tabs ul li {
+        color: #777;
+        padding: 10px 20px;
+        position: relative;
+        z-index: 1;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        user-select: none;
+      }
+      section .tabs ul li.active {
+        color: white;
+      }
+      section .tabs ul li i.fas {
+        margin-right: 7px;
+      }
+      section .tabs .selector {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        border-radius: 50px;
+        background: linear-gradient(to right, #f21711, #f5af19);
+        transition: 0.3s ease-in-out;
+      }
+    </style>
+    <style>
+
+.Home_Button {
+    margin-top: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.Home_Button a {
+    display      : inline-block;
+    background-color: #0e3d8a !important;
+    color           : white !important;
+    border       : 3px solid #0e3d8a;
+    padding      : 5px 20px;
+    border-radius: 2px;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+
+
+.Innovation_TextFocus {
+    display       : inline-block;
+    vertical-align: top;
+    width         : 385px;
+    margin-right  : 6px;
+    margin-left   : 6px;
+    margin-top    : 15px;
+}
+
+.News_TextFocus {
+    display       : inline-block;
+    vertical-align: top;
+    width         : 385px;
+    margin-right  : 6px;
+    margin-left   : 6px;
+    margin-top    : 15px;
+}
+
+
+.card:hover {
+    border-color: black;
+}
+
+.card {
+    border-radius     : .25rem;
+    position          : relative;
+    display           : -ms-flexbox;
+    display           : flex;
+    -ms-flex-direction: column;
+    flex-direction    : column;
+    min-width         : 0;
+    word-wrap         : break-word;
+    background-color  : #fff;
+    background-clip   : border-box;
+}
+
+.card-title {
+    margin-bottom: .75rem
+}
+
+.card-text:last-child {
+    margin-bottom: 20px !important;
+}
+
+.card-text {
+    text-align: center;
+    height    : 28px;
+}
+
+.card-text2 {
+    text-align: center;
+}
+
+.card-img,
+.card-img-bottom,
+.card-img-top {
+    -ms-flex-negative: 0;
+    flex-shrink      : 0;
+    width            : 100%
+}
+
+.card-img,
+.card-img-top {
+    border-top-left-radius : calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px)
+}
+
+.card-group>.card:not(:last-child) .card-header,
+.card-group>.card:not(:last-child) .card-img-top {
+    border-top-right-radius: 0
+}
+
+.card-group>.card:not(:last-child) .card-footer,
+.card-group>.card:not(:last-child) .card-img-bottom {
+    border-bottom-right-radius: 0
+}
+
+.pos-bottom {
+    position    : absolute;
+    bottom      : 10px;
+    margin-left : auto;
+    margin-right: auto;
+    left        : 0;
+    right       : 0;
+    text-align  : center;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .card-text:last-child {
+        margin-bottom: 35px !important;
+    }
+}
+
+    </style>
+    <style>
+
+.container {
+    text-align: center;
+    width        : 94%;
+    padding-right: 15px;
+    padding-left : 15px;
+    margin-right : auto;
+    margin-left  : auto;
+    margin-top : -50px !important;
+}
+
+@media (min-width:576px) {
+    .container {
+        max-width: 540px
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        max-width: 720px
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 960px
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1140px
+    }
+}
+
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+    width        : 100%;
+    padding-right: 15px;
+    padding-left : 15px;
+    margin-right : auto;
+    margin-left  : auto
+}
+
+@media (min-width:576px) {
+
+    .container,
+    .container-sm {
+        max-width: 540px
+    }
+}
+
+@media (min-width:768px) {
+
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 750px
+    }
+}
+
+@media (min-width:992px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 960px
+    }
+}
+
+@media (min-width:1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1500px
+    }
+}
+    </style>
+
+    <script type="text/javascript">
+        //reload the page at once(one) time
+        // (function () {
+        //     setTimeout(function(){
+        //         window.location.hash = "reload";
+        //     },300);
+        // })();
+    </script>
+    <script>
+        //select specific menu of (a href tag). stop page load by default, do page load by using javascript.
+        var InnovationDiv = document.querySelector("div #myDropdownInnovation");
+        var MenuLists = InnovationDiv.querySelectorAll("a");
+        var newWin;
+        $(document).ready(function(){
+            MenuLists.forEach(MenuList => {
+                MenuList.addEventListener("click", (event) => {
+
+                    event.preventDefault();
+            //newWin = window.open(MenuList.href,'_blank',"popup");
+            setTimeout(function() { 
+                location.assign(MenuList.href);
+            },400);
+        },false);
+        });
+        }); 
+    </script>
+    <script type="text/javascript">
+      //==================== Start Custom Tabs Selector ===================
+      window.onload = () => {
+        let tabsContainer = document.querySelector("section .tabs"),
+          tabs = tabsContainer.querySelectorAll("li"),
+          selector = tabsContainer.querySelector(".selector");
+
+        //- animationSelector function to move background
+        function animationSelector() {
+          let activeItem = tabsContainer.querySelector("li.active");
+          selector.style.width = activeItem.offsetWidth + "px";
+          selector.style.left = activeItem.offsetLeft + "px";
+        }
+
+        //- Add Events to tabs items
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabsContainer.querySelector("li.active").classList.remove("active");
+            tab.classList.add("active");
+            animationSelector();
+          });
+        });
+
+        //- Call animationSelector function
+        animationSelector();
+        //==================== End Custom Tabs Selector ===================
+
+
+          //==================== load the page and select tab and content of the page by seaching url pattern ===================
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var queryValue = urlParams.get('tab');
+            // converting first letter to uppercase
+            var tc = queryValue.charAt(0).toUpperCase() + queryValue.slice(1);
+            var tn = tc+"Tab";
+    
+            tabsContainer.querySelector("li.active").classList.remove("active");
+      
+            if(tc == "Patent" || tc == "News"){
+                var i, tabcontent;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+           
+              setTimeout(function() {
+                document.getElementById(tn).classList.add("active");
+                document.getElementById(tc).style.display = "block";
+               },50);
+           
+
+                setTimeout(function() {
+                    let activeItem = tabsContainer.querySelector("li.active");
+                    selector.style.width = activeItem.offsetWidth + "px";
+                    selector.style.left = activeItem.offsetLeft + "px";
+                },150);
+            }
+      };
+    </script>
+    <script>
+        //- click to open tab
+        function openTab(evt, tabName) {
+        var i, tabcontent;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+         
+        document.getElementById(tabName).style.display = "block";
+    }
+    </script>
+  </head>
+  <body>
+    <section>
+      <nav class="tabs">
+        <div class="selector" style="width: 104px; left: 0px"></div>
+        <ul>
+          <li id="PatentTab" class="active" onclick="openTab(event, 'Patent')">
+            <i class="fas fa-home"> </i>Home
+          </li>
+          <li id="NewsTab" class="" onclick="openTab(event, 'News')"><i class="fas fa-user"></i>Abou Us</li>
+        </ul>
+      </nav>
+    </section>
+
+    <div>
+      <div id="Patent" class="tabcontent" style="display: block">
+        <div class="Home_Section">
+          <div class="container">
+            <div>
+              <!--?xml version="1.0" encoding="utf-16"?-->
+              <div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-1.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P015931
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-1.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-2.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P016021
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-2.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-2.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P016701
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-2.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-4.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P018223
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-4.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-5.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P018560
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-5.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-6.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P019026
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-6.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-7.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P019171
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-7.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-8.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P019511
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-8.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-9.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P021826
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-9.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-10.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P022366
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-10.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-11.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P022374
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-11.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="Innovation_TextFocus">
+                  <div
+                    class="card"
+                    style="text-align: justify; padding: 10px 10px"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-12.pdf"
+                    >
+                      <img
+                        class="card-img-top"
+                        alt="Card image cap"
+                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Patent/patent-image.jpg"
+                      />
+                      <h2
+                        class="card-title"
+                        style="font-size: medium; text-align: center"
+                      >
+                        Patents N P022375
+                      </h2>
+                    </a>
+                    <div class="card-text">
+                      <footer>
+                        <div class="pos-bottom">
+                          <small
+                            class="text-muted Home_Button"
+                            style="font-size: medium; margin-top: 0px"
+                          >
+                            <a
+                              target="_blank"
+                              href="https://www.progold.com/apps/BC_Website/Resources/PDF/Bluclad_20210415_Report_Brevetti-12.pdf"
+                            >
+                              <span>READ</span>
+                            </a>
+                          </small>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div id="News" class="tabcontent" style="display: none">
+        <div class="Home_Section">
+          <div class="container">
+            <div>
+              <!--?xml version="1.0" encoding="utf-16"?-->
+              <div class="News_TextFocus">
+                <div
+                  class="card"
+                  style="text-align: justify; border: none; padding-bottom: 5px"
+                >
+                  <a
+                    href="https://www.progold.com/apps/BC_Website/Pages/Innovation/ProjectArticle.aspx?Lid=020_en-GB&amp;ID=1"
+                  >
+                    <img
+                      class="card-img-top"
+                      alt="Card image cap"
+                      src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/News/demoImage.png"
+                    />
+                  </a>
+                  <a
+                    href="https://www.progold.com/apps/BC_Website/Pages/Innovation/ProjectArticle.aspx?Lid=020_en-GB&amp;ID=1"
+                  >
+                    <p class="card-text" style="text-align: justify">
+                      High jewellery: Bluclad and Progold create an integrated
+                      platform at the service of the luxury market
+                    </p>
+                  </a>
+                  <p class="card-text">
+                    <small
+                      class="text-muted Home_Button"
+                      style="font-size: medium; float: right; margin-top: 0px"
+                    >
+                      <a
+                        href="https://www.progold.com/apps/BC_Website/Pages/Innovation/ProjectArticle.aspx?Lid=020_en-GB&amp;ID=1"
+                      >
+                        <span>READ</span>
+                      </a>
+                    </small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
