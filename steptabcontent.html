@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.progold.com/PG_Resources/PG_CSS/PG_Main.css?v=0032">
+    <link rel="stylesheet" href="https://www.progold.com/apps/BC_Website/Resources/Style/Master.css?v=0033">
+    <link rel="stylesheet" type="text/css" href="https://www.progold.com/PG_Resources/PG_CSS/PG_Fonts_Lato.css?v=0040">
+    <link rel="stylesheet" type="text/css" href="https://www.progold.com/apps/BC_Website//Resources/Style/MediaQuery.css" media="all">
+    <link rel="stylesheet" type="text/css" href="https://www.progold.com/apps/BC_Website//Resources/Style/ConsultancyV2.css" media="all">
+    <style>
+        body{font-family:PG_Fonts_GorditaRegular,PG_Fonts_LatoRegular,Arial,Verdana,Helvetica,sans-serif !important;background-color:white;font-size:14px;margin:0px;padding:0px;overflow-y:auto;}
+     
+    </style>
+    <script type="text/javascript">
+        window.onload = () => {
+        openTab(event, '1')
+        //==================== Start Custom Tabs Selector ===================
+        const tabsContainer = document.querySelector("section .tabs"),
+            tabs = tabsContainer.querySelectorAll("li"),
+            selector = tabsContainer.querySelector(".selector");
+
+        //- animationSelector function to move background
+        function animationSelector() {
+            let activeItem = tabsContainer.querySelector("li.active");
+            selector.style.width = activeItem.offsetWidth + "px";
+            selector.style.left = activeItem.offsetLeft + "px";
+        }
+
+        //- Add Events to tabs items
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                tabsContainer.querySelector("li.active").classList.remove("active");
+
+                tab.classList.add("active");
+                animationSelector();
+            });
+        });
+        //- Call animationSelector function
+        setTimeout(function () {
+            animationSelector();
+        }, 250);
+    }
+
+        function openTab(evt, tabName) {
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("activeTab");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("activeTab");
+            //evt.currentTarget.className += " active";
+        }
+
+        function previousSlide() {
+            
+            var tabNumber = parseInt(document.querySelector(".activeTab").getAttribute("id"));
+            if (tabNumber > 1) {
+                var tabID = tabNumber - 1;
+                openTab(event, tabID);
+                changeTab(tabID);
+                const tabsContainer = document.querySelector("section .tabs"),
+                           selector = tabsContainer.querySelector(".selector");
+                let activeItem = tabsContainer.querySelector("li.active");
+                selector.style.width = activeItem.offsetWidth + "px";
+                selector.style.left = activeItem.offsetLeft + "px";
+            }
+        }
+
+        function nextSlide() {
+            var tabNumber = parseInt(document.querySelector(".activeTab").getAttribute("id"));
+            if (tabNumber < 5) {
+                var tabID = tabNumber + 1;
+                openTab(event, tabID);
+                changeTab(tabID);
+                const tabsContainer = document.querySelector("section .tabs"),
+                           selector = tabsContainer.querySelector(".selector");
+                let activeItem = tabsContainer.querySelector("li.active");
+                selector.style.width = activeItem.offsetWidth + "px";
+                selector.style.left = activeItem.offsetLeft + "px";
+            }
+        }
+
+        function changeTab(id) {
+            document.querySelector(".active").classList.remove("active");
+            switch (id) {
+                case 1:
+                document.querySelector(".tab1").classList.add("active");
+                    break;
+                case 2:
+                document.querySelector(".tab2").classList.add("active");
+                    break;
+                case 3:
+                document.querySelector(".tab3").classList.add("active");
+                    break;
+                case 4:
+                document.querySelector(".tab4").classList.add("active");
+                    break;
+                case 5:
+                document.querySelector(".tab5").classList.add("active");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="Home_Section"
+        style="padding-bottom:20px; margin-top:0px;  padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto;cursor: default !important; ">
+        <div class="Home_Title" style="margin-top: -5px; margin-bottom:30px;">
+            <span>CONSULTANCY</span>
+        </div>
+        <section>
+            <nav class="tabs">
+
+                <div class="selector" style="width: 240px; left: 0px;"> </div>
+                <ul>
+                    <li class="tab1 active" id="ProjectTab" onclick="openTab(event, '1')"><img class="Tab-icon-style"
+                            src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/FashionHouse.png">
+                    </li>
+                    <li class="tab2" id="PatentTab" onclick="openTab(event, '2')"><img class="Tab-icon-style"
+                            src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/SecondIcon.png">
+                    </li>
+                    <li class="tab3" id="NewsTab" onclick="openTab(event, '3')"><img class="Tab-icon-style"
+                            src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/ThirdIcon.png">
+                    </li>
+                    <li class="tab4" id="PatentTab" onclick="openTab(event, '4')"><img class="Tab-icon-style"
+                            src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/FourthIcon.png">
+                    </li>
+                    <li class="tab5" id="NewsTab" onclick="openTab(event, '5')"><img class="Tab-icon-style"
+                            src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/Fifth.png">
+                    </li>
+                </ul>
+
+            </nav>
+        </section>
+
+        <!--?xml version="1.0" encoding="utf-16"?-->
+        <div class="tabcontent activeTab" id="1" style="display: block;">
+            <div class="Home_Section">
+                <div class="container" style="background-color: #efefef; padding-bottom:20px;">
+                    <div class="previous" onclick="previousSlide()">
+                        <span id="left-arrow" class="arrow">‹</span>
+                    </div>
+                    <div class="Consultancy-WidthFocus2">
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:15px;  font-family: PG_Fonts_GorditaMedium !important;">
+                            Step1</div>
+                        <div class="Title"
+                            style="margin-top: 10px;  font-size:25px;  font-family: PG_Fonts_GorditaMediumItalic !important;">
+                            Customer request</div>
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:20px;  font-family: PG_Fonts_GorditaLight !important; text-align:justify;">
+                            The maison needs a particular finish. Bluclad is contacted and through one-to-one meetings
+                            the collaboration begins.</div>
+                    </div>
+                    <div class="Consultancy-WidthFocus1">
+                        <div class="card-deck">
+                            <div class="card" style="text-align: center; padding: 10px 10px; border-radius: 0.25rem; ">
+                                <a>
+                                    <img class="card-img-top" width="100%;" alt="" style="opacity:0"
+                                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/U1.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nextSet">
+                        <div class="previousMobile" onclick="previousSlide()">
+                            <span id="left-arrow" class="arrow">‹</span>
+                        </div>
+                        <div class="next" onclick="nextSlide()">
+                            <span id="right-arrow" class="arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabcontent" id="2" style="display: none;">
+            <div class="Home_Section">
+                <div class="container" style="background-color: #efefef; padding-bottom:20px;">
+                    <div class="previous" onclick="previousSlide()">
+                        <span id="left-arrow" class="arrow">‹</span>
+                    </div>
+                    <div class="Consultancy-WidthFocus2">
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:15px;  font-family: PG_Fonts_GorditaMedium !important;">
+                            Step2</div>
+                        <div class="Title"
+                            style="margin-top: 10px;  font-size:25px;  font-family: PG_Fonts_GorditaMediumItalic !important;">
+                            Realization of proposals</div>
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:20px;  font-family: PG_Fonts_GorditaLight !important; text-align:justify;">
+                            Bluclad creates industrializable proposals for the fashion house in line with the style,
+                            paying attention to the qualitative line.</div>
+                    </div>
+                    <div class="Consultancy-WidthFocus1">
+                        <div class="card-deck">
+                            <div class="card" style="text-align: center; padding: 10px 10px; border-radius: 0.25rem; ">
+                                <a>
+                                    <img class="card-img-top" width="100%;" alt="" style="opacity:0"
+                                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/U2.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nextSet">
+                        <div class="previousMobile" onclick="previousSlide()">
+                            <span id="left-arrow" class="arrow">‹</span>
+                        </div>
+                        <div class="next" onclick="nextSlide()">
+                            <span id="right-arrow" class="arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabcontent" id="3" style="display: none;">
+            <div class="Home_Section">
+                <div class="container" style="background-color: #efefef; padding-bottom:20px;">
+                    <div class="previous" onclick="previousSlide()">
+                        <span id="left-arrow" class="arrow">‹</span>
+                    </div>
+                    <div class="Consultancy-WidthFocus2">
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:15px;  font-family: PG_Fonts_GorditaMedium !important;">
+                            Step3</div>
+                        <div class="Title"
+                            style="margin-top: 10px;  font-size:25px;  font-family: PG_Fonts_GorditaMediumItalic !important;">
+                            Color master realization</div>
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:20px;  font-family: PG_Fonts_GorditaLight !important; text-align:justify;">
+                            Bluclad realizes the color master (seal drops), the galvanic specifications and the
+                            fine-tuning of the finish from all suppliers.</div>
+                    </div>
+                    <div class="Consultancy-WidthFocus1">
+                        <div class="card-deck">
+                            <div class="card" style="text-align: center; padding: 10px 10px; border-radius: 0.25rem; ">
+                                <a>
+                                    <img class="card-img-top" width="100%;" alt="" style="opacity:0"
+                                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/U3.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nextSet">
+                        <div class="previousMobile" onclick="previousSlide()">
+                            <span id="left-arrow" class="arrow">‹</span>
+                        </div>
+                        <div class="next" onclick="nextSlide()">
+                            <span id="right-arrow" class="arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabcontent" id="4" style="display: none;">
+            <div class="Home_Section">
+                <div class="container" style="background-color: #efefef; padding-bottom:20px;">
+                    <div class="previous" onclick="previousSlide()">
+                        <span id="left-arrow" class="arrow">‹</span>
+                    </div>
+                    <div class="Consultancy-WidthFocus2">
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:15px;  font-family: PG_Fonts_GorditaMedium !important;">
+                            Step4</div>
+                        <div class="Title"
+                            style="margin-top: 10px;  font-size:25px;  font-family: PG_Fonts_GorditaMediumItalic !important;">
+                            Field research</div>
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:20px;  font-family: PG_Fonts_GorditaLight !important; text-align:justify;">
+                            Bluclad goes to the fashion house to put the manufacturing and finishing on the accessories
+                            in place</div>
+                    </div>
+                    <div class="Consultancy-WidthFocus1">
+                        <div class="card-deck">
+                            <div class="card" style="text-align: center; padding: 10px 10px; border-radius: 0.25rem; ">
+                                <a>
+                                    <img class="card-img-top" width="100%;" alt="" style="opacity:0"
+                                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/U4.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nextSet">
+                        <div class="previousMobile" onclick="previousSlide()">
+                            <span id="left-arrow" class="arrow">‹</span>
+                        </div>
+                        <div class="next" onclick="nextSlide()">
+                            <span id="right-arrow" class="arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabcontent" id="5" style="display: none;">
+            <div class="Home_Section">
+                <div class="container" style="background-color: #efefef; padding-bottom:20px;">
+                    <div class="previous" onclick="previousSlide()">
+                        <span id="left-arrow" class="arrow">‹</span>
+                    </div>
+                    <div class="Consultancy-WidthFocus2">
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:15px;  font-family: PG_Fonts_GorditaMedium !important;">
+                            Step5</div>
+                        <div class="Title"
+                            style="margin-top: 10px;  font-size:25px;  font-family: PG_Fonts_GorditaMediumItalic !important;">
+                            Constant consulting service</div>
+                        <div class="Title"
+                            style="margin-top: 40px;  font-size:20px;  font-family: PG_Fonts_GorditaLight !important; text-align:justify;">
+                            The Bluclad team is always available to follow the needs of fashion houses.</div>
+                    </div>
+                    <div class="Consultancy-WidthFocus1">
+                        <div class="card-deck">
+                            <div class="card" style="text-align: center; padding: 10px 10px; border-radius: 0.25rem; ">
+                                <a>
+                                    <img class="card-img-top" width="100%;" alt="" style="opacity:0"
+                                        src="https://www.progold.com/apps/BC_Website/Resources/Images/Pages/Consultancy/U5.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nextSet">
+                        <div class="previousMobile" onclick="previousSlide()">
+                            <span id="left-arrow" class="arrow">‹</span>
+                        </div>
+                        <div class="next" onclick="nextSlide()">
+                            <span id="right-arrow" class="arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
