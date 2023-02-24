@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul >
+        <li id="first">Coffee</li>
+        <li id="past">Tea</li>
+        <li id="last">Milk</li>
+    </ul>
+<script>
+    //To get the last child of the list you can simply make use of queryselector
+
+    alert(document.querySelector('li:last-child').getAttribute("id")); //this will return Milk which is the last child of the list
+    alert(document.querySelector('li:first-child').getAttribute("id")) //both will give you the first child of the list
+    alert(document.querySelector('li').getAttribute("id")); //both will give you the first child of the list
+
+   // Suppose you want the n-th child for that you can use the following syntax:
+
+    alert(document.querySelector('li:nth-child(2)').getAttribute("id"));  //it will return the second child (here Tea)
+
+    //If you want all the list item in the given list:
+    alert(document.getElementsByTagName('li').length); //(Will return the whole list)here i am using tagname. It can be also applied on classname or element id
+    alert(document.querySelectorAll('li').length); //(Will return the whole list)here i am using tagname. It can be also applied on classname or element id
+</script>
+</body>
+</html>
